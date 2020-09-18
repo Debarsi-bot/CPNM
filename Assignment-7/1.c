@@ -46,28 +46,6 @@ void  bisection(double a,double b,double fm_old,double eps)
 
 
 //regula falsi start
-double derivative(double x)
-{
-    return 3*pow(x,2)+4*x-40;
-}
-
-void newton_rhapson(double x_old,double eps)
-{
-    double x_new=x_old-f(x_old)/derivative(x_old);
-    double eps_a=fabs(fabs(x_new-x_old)/x_new);
-    if(eps_a<=eps)
-    {
-        printf("root is %lf\n",x_new);
-        return;
-    }
-    newton_rhapson(x_new,eps);
-
-}
-
-
-
-
-
 double calculate_mid_regula_falsi(double low,double high)
 {
         return (high*f(low)-low*f(high))/(f(low)-f(high));
@@ -91,6 +69,25 @@ void regula_falsi(double low,double high,double prev,double eps)
 //end of regula falsi
 
 //newton rhapson start
+double derivative(double x)
+{
+    return 3*pow(x,2)+4*x-40;
+}
+
+void newton_rhapson(double x_old,double eps)
+{
+    double x_new=x_old-f(x_old)/derivative(x_old);
+    double eps_a=fabs(fabs(x_new-x_old)/x_new);
+    if(eps_a<=eps)
+    {
+        printf("root is %lf\n",x_new);
+        return;
+    }
+    newton_rhapson(x_new,eps);
+
+}
+
+//newton rhapson end
 
 
 
