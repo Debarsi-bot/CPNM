@@ -47,7 +47,7 @@ int main()
     printf("Enter no of segments  to divide the domain into\n");
     scanf("%d",&n);
 
-    printf("Press 1 to solve  by Trapezoidal rule\nPress 2 to solve by Simpsons 1/3 rd rule\n");
+    printf("\nPress 1 to solve  by Trapezoidal rule\nPress 2 to solve by Simpsons 1/3 rd rule\n");
     scanf("%d",&c);
 
     switch(c)
